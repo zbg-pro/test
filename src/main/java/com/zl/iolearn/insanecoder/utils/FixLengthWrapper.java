@@ -2,10 +2,6 @@ package com.zl.iolearn.insanecoder.utils;
 
 import java.nio.ByteBuffer;
 
-/**
- * Author: shaohang.zsh
- * Date: 2016/7/20
- */
 public class FixLengthWrapper {
 
     public static final int MAX_LENGTH = 32;

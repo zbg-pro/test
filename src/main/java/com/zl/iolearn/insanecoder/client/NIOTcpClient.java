@@ -1,5 +1,7 @@
 package com.zl.iolearn.insanecoder.client;
 
+import com.zl.iolearn.insanecoder.utils.PacketWrapper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,9 +13,6 @@ import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 
-/**
- * Created by shaohang.zsh on 2016/7/14.
- */
 public class NIOTcpClient {
 
     private static final int PORT = 5555;
@@ -77,7 +76,7 @@ public class NIOTcpClient {
                     // send data normally
                     socketChannel.write(ByteBuffer.wrap(msg.getBytes()));
                     // add the head represent the data length
-//                    socketChannel.write(ByteBuffer.wrap(new PacketWrapper(msg).getBytes()));
+                    socketChannel.write(ByteBuffer.wrap(new PacketWrapper(msg).getBytes()));
                     // make the data length fixed
 //                    socketChannel.write(ByteBuffer.wrap(new FixLengthWrapper(msg).getBytes()));
 //                    System.out.println(number);

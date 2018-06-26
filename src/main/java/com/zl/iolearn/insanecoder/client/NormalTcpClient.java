@@ -6,9 +6,6 @@ import com.zl.iolearn.insanecoder.utils.SendRunnable;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by shaohang.zsh on 2016/7/13.
- */
 public class NormalTcpClient {
 
     private static final int PORT = 5555;

@@ -6,9 +6,6 @@ import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 
-/**
- * Created by shaohang.zsh on 2016/7/14.
- */
 public class AIOSendRunnable implements Runnable {
 
     private AsynchronousSocketChannel socketChannel;

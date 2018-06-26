@@ -10,9 +10,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketAddress;
 
-/**
- * Created by shaohang.zsh on 2016/7/13.
- */
+
 public class NormalTcpServer {
 
     private static final int PORT = 5555;

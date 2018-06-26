@@ -2,9 +2,6 @@ package com.zl.iolearn.insanecoder.utils;
 
 import java.nio.channels.CompletionHandler;
 
-/**
- * Created by shaohang.zsh on 2016/7/14.
- */
 public class WriteComPletionHandler implements CompletionHandler<Integer, Void> {
 
     @Override

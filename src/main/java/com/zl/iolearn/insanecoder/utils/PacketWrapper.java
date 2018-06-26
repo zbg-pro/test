@@ -2,10 +2,6 @@ package com.zl.iolearn.insanecoder.utils;
 
 import java.nio.ByteBuffer;
 
-/**
- * Author: shaohang.zsh
- * Date: 2016/7/19
- */
 public class PacketWrapper {
 
     private int length;

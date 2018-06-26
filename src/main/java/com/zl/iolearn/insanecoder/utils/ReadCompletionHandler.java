@@ -4,9 +4,6 @@ import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
 
-/**
- * Created by shaohang.zsh on 2016/7/14.
- */
 public class ReadCompletionHandler  implements CompletionHandler<Integer, AsynchronousSocketChannel> {
 
     private ByteBuffer byteBuffer;
