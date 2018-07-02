@@ -31,4 +31,10 @@ public class PacketWrapper {
         }
         return sb.toString();
     }
+
+    public static void main(String[] args) {
+        byte b = 'a';
+        String s = String.format("0x%02X ", b);
+        System.out.println(s);
+    }
 }

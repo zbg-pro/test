@@ -5,9 +5,6 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-/**
- * Created by shaohang.zsh on 2016/7/13.
- */
 public class TestChannel {
 
     public static void main(String[] args) throws IOException {
