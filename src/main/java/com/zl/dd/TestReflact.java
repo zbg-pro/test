@@ -1,12 +1,12 @@
 package com.zl.dd;
 
-import com.dd.tools.TEnv;
-import com.dd.tools.compiler.function.DynamicFunction;
-import com.dd.tools.reflect.TReflect;
 import com.zl.netty.ProxyFactory;
 import com.zl.netty.heartBeat.common.CustomHeartbeatHandler;
 import com.zl.netty.heartBeat.server.ServerHandler;
 import org.junit.Test;
+import org.voovan.tools.TEnv;
+import org.voovan.tools.compiler.function.DynamicFunction;
+import org.voovan.tools.reflect.TReflect;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -56,7 +56,7 @@ public class TestReflact {
     }
 
 
-    public static void unsafeTest1() throws ReflectiveOperationException {
+    public static void unsafeTest1() throws Exception {
         TReflect.allocateInstance(ProxyFactory.class);
         Field f = Unsafe.class.getDeclaredField("theUnsafe");
         f.setAccessible(true);
