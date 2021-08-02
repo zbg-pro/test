@@ -1,9 +1,9 @@
 package com.zl.iolearn.insanecoder.test;
 
-import com.dd.tools.TString;
-import com.dd.tools.json.JSON;
-import com.dd.tools.log.Logger;
-import com.dd.tools.reflect.TReflect;
+import org.voovan.tools.TString;
+import org.voovan.tools.json.JSON;
+import org.voovan.tools.log.Logger;
+import org.voovan.tools.reflect.TReflect;
 
 import java.io.StringReader;
 import java.math.BigDecimal;

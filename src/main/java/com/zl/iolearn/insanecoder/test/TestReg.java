@@ -1,7 +1,7 @@
 package com.zl.iolearn.insanecoder.test;
 
-import com.dd.tools.TString;
 import org.junit.Test;
+import org.voovan.tools.TString;
 
 /**
  * Created by hl on 2018/7/2.
