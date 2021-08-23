@@ -6,12 +6,12 @@ package com.zl.gaozhiliang152jianyi;
  * @date 2021/7/21 8:29 下午
  * @auth ALLEN
  */
-public enum CommonIdentifier implements Identifier {
+public enum CommonIdentifier implements Identifier2  {
 
     Reader, Author, Admin
     ;
 
-    @Override
+
     public boolean identify() {
         return false;
     }
