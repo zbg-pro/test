@@ -32,12 +32,7 @@ public class Memoizer<A, V> implements Computable<A, V> {
 
             Future<V> f = cache.get(arg);
             if (f == null) {
-                Callable<V> eval = new Callable() {
-                    @Override
-                    public V call() throws Exception {
-                        return c.compute(arg);
-                    }
-                };
+                Callable<V> eval = (Callable) () -> c.compute(arg);
                 FutureTask<V> ft = new FutureTask<V>(eval);
                 f = ft;
                 cache.putIfAbsent(arg, ft);
@@ -46,6 +41,8 @@ public class Memoizer<A, V> implements Computable<A, V> {
 
             try {
                 return f.get();
+            } catch (CancellationException e) {
+                cache.remove(arg, f);
             } catch (ExecutionException e) {
                 throw LaunderThrowable.launderThrowable(e);
             }
@@ -64,7 +61,7 @@ public class Memoizer<A, V> implements Computable<A, V> {
 
         Computable<BigInteger, BigInteger[]> cache = new Memoizer<BigInteger, BigInteger[]>(c);
 
-        cache.compute(new BigInteger("1"));
+        System.out.println(cache.compute(new BigInteger("1")));
     }
 
 }

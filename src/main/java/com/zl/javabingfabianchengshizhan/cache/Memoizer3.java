@@ -29,12 +29,7 @@ public class Memoizer3<A, V> implements Computable<A, V> {
     public V compute(A arg) throws InterruptedException {
         Future<V> f = cache.get(arg);
         if (f == null) {
-            Callable<V> eval = new Callable() {
-                @Override
-                public V call() throws Exception {
-                    return c.compute(arg);
-                }
-            };
+            Callable<V> eval = (Callable) () -> c.compute(arg);
             FutureTask<V> ft = new FutureTask<V>(eval);
             f = ft;
             cache.put(arg, f);
