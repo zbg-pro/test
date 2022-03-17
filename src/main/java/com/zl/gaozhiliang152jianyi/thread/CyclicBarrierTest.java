@@ -17,12 +17,8 @@ public class CyclicBarrierTest {
             }
         });
 
-        //new Thread(new Worker(cb), "工人1").start();
-        //new Thread(new Worker(cb), "工人2").start();
-
-        AtomicReference<Long> positionsId = new AtomicReference<>(null);
-        System.out.println(positionsId);
-        System.out.println(positionsId.get());
+        new Thread(new Worker(cb), "工人1").start();
+        new Thread(new Worker(cb), "工人2").start();
     }
 
 }
@@ -38,8 +34,8 @@ class Worker implements Runnable {
     @Override
     public void run() {
         try {
-            //Thread.sleep(new Random().nextInt(1000));
-            TimeUnit.SECONDS.sleep(new Random().nextInt(10));
+            Thread.sleep(new Random().nextInt(5000));
+            //TimeUnit.SECONDS.sleep(new Random().nextInt(30));
             System.out.println(TDateTime.now() +Thread.currentThread().getName() + "-到达汇合点");
             cb.await();
             System.out.println(TDateTime.now() +Thread.currentThread().getName() + "-相汇后继续干活");

@@ -1,5 +1,7 @@
 package com.zl.javabingfabianchengshizhan;
 
+import org.voovan.tools.TEnv;
+
 /**
  * @author Allen.zhang
  * @title: NotVisibility
@@ -15,6 +17,7 @@ public class NotVisibility {
         public void run() {
             while (!ready) {
                 Thread.yield();
+                System.out.println("111");
             }
 
             System.out.println(number);
@@ -24,7 +27,8 @@ public class NotVisibility {
     public static void main(String[] args) {
         new ReaderThread().start();
         number = 42;
-        //ready = true;
+        TEnv.sleep(1000);
+        ready = true;
     }
 
 }
