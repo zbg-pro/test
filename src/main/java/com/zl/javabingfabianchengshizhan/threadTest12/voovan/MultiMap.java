@@ -72,20 +72,40 @@ public class MultiMap<K, V> extends ConcurrentHashMap<K, List<V>> {
         return super.put(key, list);
     }
 
-    public void addValue(K key , V value) {
-
+    public void add(K key , V value) {
+        List<V> vList = getValueList(key);
+        vList.add(value);
+        super.put(key, vList);
     }
 
-    public void addValues(K Key, List<V> list) {
-
+    public void addValues(K key, List<V> list) {
+        List<V> vList = getValueList(key);
+        vList.addAll(list);
+        super.put(key, vList);
     }
 
     public void addValue(K key, V... values) {
-
+        List<V> vList = getValueList(key);
+        vList.addAll(Arrays.asList(values));
+        super.put(key, vList);
     }
 
-    public void addAllValue(MultiMap<K,V> map) {
+    public boolean addAllValue(MultiMap<K,V> map) {
+        boolean merge = false;
+        if (map == null || map.isEmpty()) {
+            return merge;
+        }
 
+        for (Entry<K, List<V>> entry : map.entrySet()) {
+            K key = entry.getKey();
+            List<V> vList = entry.getValue();
+            if (containsKey(key)) {
+                merge = true;
+            }
+
+            addValues(key, vList);
+        }
+        return merge;
     }
 
     public V removeValue(K key, int index) {
