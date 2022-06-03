@@ -55,6 +55,7 @@ public class CurrLinkedQueue<E> {
                 return true;
             }
         }
+
     }
 
 }
